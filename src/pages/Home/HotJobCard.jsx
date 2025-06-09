@@ -23,7 +23,7 @@ const {
   _id
 } = job;
 
-console.log(company);
+// console.log(company);
 
 
     return (

@@ -15,7 +15,7 @@ const HotJobs = () => {
     },[])
 
     return (
-        <div>
+        <div className='px-10 mt-40'>
             <p>{jobs.length}</p>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                 {

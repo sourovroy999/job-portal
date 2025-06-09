@@ -24,7 +24,7 @@ const Navbar = () => {
     const links=<>
     <li> <NavLink to={'/'}>HOME</NavLink></li>
    
-    <li><a>Item 1</a></li>
+    <li><NavLink to={'/myApplications'}>MY Applications</NavLink></li>
     <li><a>Item 3</a></li>
     
     </>
@@ -57,6 +57,7 @@ const Navbar = () => {
     {
   user?
    <>
+
     <button onClick={handleSignOut} className='btn' >SignOut</button>
    </>
   

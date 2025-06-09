@@ -4,7 +4,7 @@ import joblogo from '../../assets/logoIcon.png'
 
 const Footer = () => {
     return (
-        <footer className="footer sm:footer-horizontal flex gap-5 justify-between  px-24 bg-base-200 text-base-content p-10 ">
+        <footer className="footer sm:footer-horizontal flex flex-col md:flex-row gap-5 justify-between  md:px-24 bg-base-200 text-base-content p-10 ">
   <aside>
     <img className='w-16' src={joblogo} alt="" />
     <p >
