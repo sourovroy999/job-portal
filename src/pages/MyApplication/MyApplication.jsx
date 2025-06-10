@@ -7,7 +7,7 @@ const MyApplication = () => {
     const {user}=UseAuth()
     const [jobs,setJobs]=useState([])
 
-    console.log(jobs);
+    // console.log(jobs);
     
     useEffect(()=>{
         fetch(`http://localhost:3000/job-application?email=${user.email}`)
