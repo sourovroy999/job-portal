@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
 
 const ViewApplications = () => {
     const applications=useLoaderData()
@@ -9,6 +10,7 @@ const ViewApplications = () => {
         
         const data={
             status:e.target.value
+
 
         }
         fetch(`http://localhost:3000/job-applications/${id}`,{
@@ -21,6 +23,16 @@ const ViewApplications = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+             if(data.modifiedCount){
+                            Swal.fire({
+                         position: "top-end",
+                        icon: "success",
+                         title: "Status has been updated",
+                        showConfirmButton: false,
+                         timer: 1500
+                            });
+                        
+                        }
             
         })
         
