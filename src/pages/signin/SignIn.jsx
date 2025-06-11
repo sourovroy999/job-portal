@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router';
+import axios from 'axios';
 
 const SignIn = () => {
 
@@ -27,7 +28,16 @@ const SignIn = () => {
          .then(result=>{
             console.log(result.user);
             toast.success('Log in Successfuly')
-            navigate(from, {replace:true})
+
+            const user={email: result.user.email}
+
+            axios.post('http://localhost:3000/jwt', user, {withCredentials:true})
+            .then(res=>{
+              console.log(res.data);
+              
+            })
+
+            // navigate(from, {replace:true})
          })
          .catch(error=>{
             toast.error(error.message)

@@ -26,7 +26,7 @@ const AddJob = () => {
         newJob.responsibilities=newJob.responsibilities.split('\n')
 
 
-        // console.log(newJob);
+        console.log(newJob);
         //send data to server
 
         fetch('http://localhost:3000/jobs',{
@@ -85,7 +85,7 @@ const AddJob = () => {
           {/* job type  */}
 
             <label className="label">Job Type</label>
-      <select defaultValue="job type" className="select select-primary ">
+      <select name='jobType' defaultValue="job type" className="select select-primary ">
        <option disabled={true}>Job Type</option>
         <option>Intern</option>
        <option>Full Time</option>
@@ -95,7 +95,7 @@ const AddJob = () => {
           {/* job category  */}
 
             <label className="label">Job Field</label>
-      <select defaultValue="Pick a font" className="select select-primary ">
+      <select name='cetegory' defaultValue="Pick a font" className="select select-primary ">
        <option disabled={true}>Job Field</option>
         <option>Engineering</option>
        <option>Marketing</option>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UseAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const MyApplication = () => {
 
@@ -10,11 +11,18 @@ const MyApplication = () => {
     // console.log(jobs);
     
     useEffect(()=>{
-        fetch(`http://localhost:3000/job-application?email=${user.email}`)
+        // fetch(`http://localhost:3000/job-application?email=${user.email}`)
     
-        .then(res=>res.json())
-        .then(data=>{
-            setJobs(data)
+        // .then(res=>res.json())
+        // .then(data=>{
+        //     setJobs(data)
+        // })
+
+        //same jinis but with axios . ekhn theke axios use korbo, becoz it is secure
+        axios.get(`http://localhost:3000/job-application?email=${user.email}`,{withCredentials:true})
+        .then(res=>{
+          console.log(res.data)
+          setJobs(res.data)
         })
     
     },[user.email])

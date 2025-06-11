@@ -47,7 +47,7 @@ const JobApply = () => {
                 
               Swal.fire({
                   icon: "success",
-                  title: "Your work has been saved",
+                  title: "applied successfully",
                   showConfirmButton: false,
                   timer: 1500,
                   position: "top-end",
