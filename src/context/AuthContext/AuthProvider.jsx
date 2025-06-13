@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import auth from '../../firebase/firebase.init';
 import { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 const AuthProvider = ({children}) => {
 
@@ -20,6 +21,13 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
 
+    const googleProvider=new GoogleAuthProvider()
+
+    const googleSignIn=()=>{
+      return signInWithPopup(auth, googleProvider)
+      
+    }
+
     const SignOutUser=()=>{
         setLoading(true)
         return signOut(auth)
@@ -29,8 +37,29 @@ const AuthProvider = ({children}) => {
        const unSubscribe= onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
             console.log('state captured', currentUser);
+
+            if(currentUser?.email){
+                const user={email: currentUser.email}
+
+                axios.post('http://localhost:3000/jwt', user, {withCredentials: true})
+                .then(res=>{
+                    
+                    console.log('login token',res.data)
+                 setLoading(false)
+                    
+                }
+                )
+            }
+            else{
+                axios.post('http://localhost:3000/logout', {},{
+                    withCredentials:true
+                })
+                .then(res=>{console.log('log out', res.data)
+                    setLoading(false)
+                }
+                )
+            }
             
-            setLoading(false)
         })
 
         return ()=>{
@@ -44,7 +73,8 @@ const AuthProvider = ({children}) => {
         loading,
         createUser,
         signInUser,
-        SignOutUser
+        SignOutUser,
+        googleSignIn
         
 
 

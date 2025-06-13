@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import UseAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+// import axios from 'axios';
+import UseAxiosSecure from '../../Hooks/UseAxiosSecure';
 
 const MyApplication = () => {
 
     const {user}=UseAuth()
     const [jobs,setJobs]=useState([])
 
-    // console.log(jobs);
+    const axiosSecure=UseAxiosSecure();
+
+
+    console.log(jobs);
     
     useEffect(()=>{
         // fetch(`http://localhost:3000/job-application?email=${user.email}`)
@@ -19,13 +23,18 @@ const MyApplication = () => {
         // })
 
         //same jinis but with axios . ekhn theke axios use korbo, becoz it is secure
-        axios.get(`http://localhost:3000/job-application?email=${user.email}`,{withCredentials:true})
-        .then(res=>{
-          console.log(res.data)
-          setJobs(res.data)
-        })
+
+        // axios.get(`http://localhost:3000/job-application?email=${user.email}`,{withCredentials:true})
+        // .then(res=>{
+        //   console.log(res.data)
+        //   setJobs(res.data)
+        // })
+
+        //same jinis by using custom hook
+        axiosSecure.get(`/job-application?email=${user.email}`)
+        .then(res=>setJobs(res.data));
     
-    },[user.email])
+    },[axiosSecure, user.email])
 
 
     const handledelete=(email, _id)=>{

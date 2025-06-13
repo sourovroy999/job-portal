@@ -9,12 +9,21 @@ import axios from 'axios';
 
 const SignIn = () => {
 
-    const {signInUser}=useContext(AuthContext)
+    const {signInUser, googleSignIn}=useContext(AuthContext)
     const navigate=useNavigate()
     const location=useLocation()
 
     const from=location.state || "/"
     // const from=location.state?.from?.pathname || "/"
+
+
+    const handleGoogleSignIn=()=>{
+       googleSignIn()
+       .then(result=>{
+        console.log(result.user);
+        
+       })
+    }
 
 
     const handleSignIn=(e)=>{
@@ -68,7 +77,10 @@ const SignIn = () => {
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Log In</button>
         </fieldset>
+
       </form>
+
+      <button onClick={handleGoogleSignIn}  className='btn btn-info mx-5 mb-5'>Sign in With google</button>
 
     </div>
   </div>

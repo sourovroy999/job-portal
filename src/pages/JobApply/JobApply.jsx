@@ -29,7 +29,8 @@ const JobApply = () => {
             applicant_email:user.email,
             linkedin,
             github,
-            resume
+            resume,
+            // category,
 
         }
 
