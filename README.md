@@ -1,12 +1,39 @@
-# React + Vite
+## 🌍 Live Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+👉 [Visit Now](https://job-portal-39e4b.web.app)
+# 🔥 React Firebase App
 
-Currently, two official plugins are available:
+A modern and responsive web application built using **React**, with secure authentication and elegant UI, enhanced by powerful libraries like **Tailwind CSS**, **DaisyUI**, **SweetAlert2**, and more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Technology        | Purpose                                      |
+|-------------------|----------------------------------------------|
+| **React**         | Frontend framework                           |
+| **Firebase**      | Authentication and hosting                   |
+| **React Router**  | Client-side routing                          |
+| **Tailwind CSS**  | Utility-first CSS framework                  |
+| **DaisyUI**       | Beautiful UI components for Tailwind         |
+| **SweetAlert2**   | Stylish alert and confirmation modals        |
+| **Lottie React**  | Render animated illustrations (Lottie files) |
+| **Axios**         | Promise-based HTTP client                    |
+| **Framer Motion** | React animation library                      |
+| **React Icons**   | Icon library                                 |
+| **React Hot Toast** | Lightweight toast notifications           |
+| **Environment Variables** | Security for sensitive config       |
+
+---
+
+## 📦 Features
+
+- ✅ Firebase Authentication (Email/Password)
+- ✅ Protected Routes using React Router
+- ✅ Custom Alerts using SweetAlert2
+- ✅ Toast Notifications with React Hot Toast
+- ✅ Reusable UI with DaisyUI and Tailwind
+- ✅ Lottie animations support
+- ✅ Smooth UI animations via Framer Motion
+- ✅ API requests handled with Axios
+- ✅ Config secured using `.env` variables

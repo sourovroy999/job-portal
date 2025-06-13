@@ -29,7 +29,7 @@ const AddJob = () => {
         console.log(newJob);
         //send data to server
 
-        fetch('http://localhost:3000/jobs',{
+        fetch('https://job-portal-server-seven-umber.vercel.app/jobs',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

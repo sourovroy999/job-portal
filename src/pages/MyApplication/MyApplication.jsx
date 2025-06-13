@@ -15,7 +15,7 @@ const MyApplication = () => {
     console.log(jobs);
     
     useEffect(()=>{
-        // fetch(`http://localhost:3000/job-application?email=${user.email}`)
+        // fetch(`https://job-portal-server-seven-umber.vercel.app/job-application?email=${user.email}`)
     
         // .then(res=>res.json())
         // .then(data=>{
@@ -24,7 +24,7 @@ const MyApplication = () => {
 
         //same jinis but with axios . ekhn theke axios use korbo, becoz it is secure
 
-        // axios.get(`http://localhost:3000/job-application?email=${user.email}`,{withCredentials:true})
+        // axios.get(`https://job-portal-server-seven-umber.vercel.app/job-application?email=${user.email}`,{withCredentials:true})
         // .then(res=>{
         //   console.log(res.data)
         //   setJobs(res.data)
@@ -53,7 +53,7 @@ const MyApplication = () => {
 }).then((result) => {
   if (result.isConfirmed) {
 
-    fetch(`http://localhost:3000/job-application?email=${email}`,{
+    fetch(`https://job-portal-server-seven-umber.vercel.app/job-application?email=${email}`,{
         method:'DELETE'
     })
     .then(res=>res.json())

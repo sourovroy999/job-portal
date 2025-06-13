@@ -13,7 +13,7 @@ const ViewApplications = () => {
 
 
         }
-        fetch(`http://localhost:3000/job-applications/${id}`,{
+        fetch(`https://job-portal-server-seven-umber.vercel.app/job-applications/${id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'
